@@ -35,9 +35,7 @@ const connectDB = async ()=> {
 const userRoutes=require('./routes/userRoute');
 app.get('/',userRoutes);
 app.post('/',userRoutes);
-//app.get('/register',userRoutes);
-app.get('/login',userRoutes);
-//app.post('/register',userRoutes);
+
 app.post('/login',userRoutes);
 app.get('/house',userRoutes);
 app.get('/logout',userRoutes);

@@ -130,11 +130,11 @@ const insertUser=async(req,res) =>{           //pass User from user.js model as 
 
         if(userData){                        // if a data comes to userData ,send response,render,se
             sendVerifyMail(req.body.name, req.body.email, userData._id);
-            res.render('home.ejs',{message:"Your Registration is Successful,Plz verify ur mail"});
+            res.render('registration.ejs',{message:"Your Registration is Successful,Plz verify ur mail"});
         }
 
         else{
-            res.render('home.ejs',{message:"Your Registration is Unsuccessful"});
+            res.render('registration.ejs',{message:"Your Registration is Unsuccessful"});
         }
 
     }catch(error){
