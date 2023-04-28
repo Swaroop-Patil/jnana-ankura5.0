@@ -59,6 +59,7 @@ app.post('/admin_forget',adminRoutes);
 app.get('/admin_forget-password',adminRoutes);
 app.post('/admin_forget-password',adminRoutes);
 app.get('/admin_dashboard',adminRoutes);
+app.get('/delete-user',adminRoutes);
 
 
 

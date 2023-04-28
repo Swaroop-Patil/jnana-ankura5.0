@@ -37,6 +37,8 @@ admin_route.post('/admin_forget-password',adminController.resetPassword);
 
 admin_route.get('/admin_dashboard',auth.isLogin,adminController.adminDashboard);
 
+admin_route.get('/delete-user',adminController.deleteUser);
+
 
 
 

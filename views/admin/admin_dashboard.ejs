@@ -47,8 +47,11 @@
                 <td><%= users[i].email %></td>
                 <td><%= users[i].course %></td>
                 <td><%= users[i].phoneNo %></td>
-                <!-- <td><img src="userImages/<%= users.image %>" width="100px" height="100px" %>" alt="<%= users.image %>"></td>-->
+                <!-- <><img src="userImages/<%= users.image %>" width="100px" height="100px" %>" alt="<%= users.image %>"></td>-->
                 
+                <td>
+                    <a href="/delete-user?id=<%= users[i]._id %>">Delete</a>
+                </td>
               </tr>
               <%
             }
@@ -81,4 +84,3 @@
 
 
 
-<a href="/admin_house">Go to Home</a>

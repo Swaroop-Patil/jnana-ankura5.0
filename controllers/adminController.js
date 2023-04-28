@@ -230,6 +230,22 @@ const securedPassword= async(password) =>{
         }
     }
 
+    //delete users
+
+    const deleteUser = async(req,res) => {
+
+        try{
+
+            const id= req.query.id;             //get the query parameter ?id //from admin-dashboard
+            await User.deleteOne({ _id:id})
+            res.redirect('/admin_dashboard');
+
+        }catch(error){
+            console.log(error.message);
+        }
+    }
+
+
 
     module.exports={
         loadLogin,
@@ -240,5 +256,6 @@ const securedPassword= async(password) =>{
         forgetVerify,
         forgetPasswordLoad,
         resetPassword,
-        adminDashboard
+        adminDashboard,
+        deleteUser
     }
