@@ -62,6 +62,27 @@ app.get('/admin_dashboard',adminRoutes);
 app.get('/delete-user',adminRoutes);
 
 
+const http = require('http');
+const fs = require('fs');
+const mime = require('mime');
+const { Script } = require('vm');
+
+http.createServer((req, res) => {
+  const filePath = '/public/script.js';
+  const contentType = mime.getType(filePath);
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404);
+      res.end();
+    } else {
+      res.writeHead(200, {
+        'Content-Type': contentType
+      });
+      res.end(data);
+    }
+  });
+});
 
 
 
