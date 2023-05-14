@@ -227,10 +227,11 @@ section{
     width: 400px;
     object-fit: cover;
     border-radius: 6px;
+    
 }
 
 .about .about-content .right{
-    width: 55%;
+    width: 50%;
 }
 
 .about .about-content .right .text{
@@ -265,119 +266,7 @@ section{
     background: none;
 }
 
-/*Skills Section*/
-section{
-    padding: 100px 0;
-}
-.skills{
-    font-family: 'Poppins',sans-serif;
-    background: #111;
-    color: #fff;
-}
-.skills .title{
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    font-family: 'Ubuntu',sans-serif;
-}
-.skills .title::before{
-    content: "";
-    position: absolute;
-    bottom:0px;
-    left: 50%;
-    width: 250px;
-    height: 3px;
-    background:#fff;
-    transform: translateX(-50%);
-}
 
-.skills .title::after{
-    content: "this forms me";
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    font-size: 20px;
-    color: crimson;
-    padding: 5px;
-    background: #111;
-    transform: translateX(-50%);
-}
-
-.skills .skills-content{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.skills .skills-content .column{
-    width: calc(50% - 30px);
-}
-
-.skills .skills-content .left .text{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.skills .skills-content .left p{
-    text-align: justify;
-}
-
-.skills .skills-content .right .bars{
-    margin-bottom: 15px;
-}
-
-.skills .skills-content .right .info{
-    display: flex;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.skills .skills-content .right span{
-    font-weight: 500;
-    font-size: 18px;
-}
-
-.skills .skills-content .right .line{
-    height: 5px;
-    width: 100%;
-    background: lightgrey;
-    position: relative;
-}
-
-.skills .skills-content .right .line::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    right: 0;
-    background: crimson;
-}
-
-.skills-content .right .html::before{
-    width: 90%;
-}
-
-.skills-content .right .css::before{
-    width: 75%;
-}
-
-.skills-content .right .js::before{
-    width: 50%;
-}
-
-.skills-content .right .cpp::before{
-    width: 90%;
-}
-
-.skills-content .right .py::before{
-    width: 75%;
-}
 /*Projects section*/
 #projects{
     font-family: 'Poppins',sans-serif;
@@ -439,7 +328,7 @@ section{
 	border-radius: 10px;
 }
 #projects .project-info {
-	padding: 30px;
+	padding: 43px;
 	flex-basis: 50%;
 	height: 100%;
 	display: flex;
