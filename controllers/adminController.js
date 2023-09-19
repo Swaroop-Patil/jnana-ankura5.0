@@ -1,6 +1,6 @@
 require('dotenv').config();
 const User=require('../models/user');
-const bcrypt=require('bcrypt');  //decrypt hashed passwords
+const bcrypt=require('bcrypt');  //decrypt hashed passwordss
 const nodemailer=require('nodemailer');
 const  config=require('../config/config');
 const randomstring=require('randomstring');
