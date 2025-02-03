@@ -1,4 +1,4 @@
-/*  require('dotenv').config();
+ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 //const bcrypt = require('bcrypt');
@@ -146,51 +146,3 @@ if (process.env.NODE_ENV !== 'netlify') {
 
 // Export the app for Netlify's serverless functions.
 module.exports = app;*/
- require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const configure = require('./config/config'); // Ensure this file exists and contains MONGO_URI
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files
-
-// MongoDB Connection
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(
-      process.env.MONGO_URI || configure.MONGO_URI,
-      { useNewUrlParser: true, useUnifiedTopology: true }
-    );
-    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error("❌ MongoDB connection error:", error);
-    process.exit(1);
-  }
-};
-
-// Load Routes
-const userRoutes = require('./routes/userRoute');
-const adminRoutes = require('./routes/adminRoute');
-
-app.use('/', userRoutes);
-app.use('/admin', adminRoutes);
-
-// Start the server (only when running locally)
-if (process.env.NODE_ENV !== 'vercel') {
-  connectDB().then(() => {
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
-  });
-} else {
-  // Ensure MongoDB connection for Vercel's serverless environment
-  connectDB();
-}
-
-// Export for Vercel (serverless function)
-module.exports = app;
