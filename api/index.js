@@ -1,4 +1,4 @@
-/*  require('dotenv').config();
+/* require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 //const bcrypt = require('bcrypt');
@@ -9,6 +9,7 @@ const configure= require('./config/config');
 
 const app = express();
 const PORT =  process.env.PORT || 3000;
+
 
 mongoose.set('strictQuery',false); //to avoid warnings
 mongoose.connect('mongodb+srv://swaroop:ninjah2r@cluster0.han8srw.mongodb.net/REGISTRATIONS_JN?retryWrites=true&w=majority', {
@@ -146,7 +147,9 @@ if (process.env.NODE_ENV !== 'netlify') {
 
 // Export the app for Netlify's serverless functions.
 module.exports = app;*/
- require('dotenv').config();
+ 
+
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const configure = require('./config/config'); // Ensure this file exists and contains MONGO_URI
